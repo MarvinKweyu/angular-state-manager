@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { CustomerModule } from './customer/customer.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     BrowserModule,
+    CustomerModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
